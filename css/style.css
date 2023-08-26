@@ -8,6 +8,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+  overflow: hidden;
+}
   /* NAVIGATION */
 
   .header{
@@ -73,7 +76,8 @@
   }
   .menu-hamburguesa {
     display: none;
-    position: absolute;
+    position: fixed;
+    z-index: 10;
     top: 0;
     right: 0;
     width: 65vw;
@@ -83,6 +87,8 @@
     align-items: center;
     padding: 2rem;
     gap: 5px;
+    transform: translateX(65vw);
+    transition: transform 300ms;
   }
   .cerrar-menu {
     font-size: 1.4rem;
@@ -130,6 +136,10 @@
   
   .mostrar--menu {
     display: flex;
+    transform: translateX(0vw);
+  }
+  .mostrar--boton{
+    display: block;
   }
 
   /* burguer list  */
@@ -140,5 +150,16 @@
     }
     .abrir-menu {
       display: block;
+    }
+    .menu-hamburguesa {
+      display: flex;
+    }
+  }
+  @media  screen and (min-width: 700px) {
+    .abrir-menu{
+      display: none;
+    }
+    .menu-hamburguesa{
+      display: none;
     }
   }
